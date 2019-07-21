@@ -1,2 +1,2 @@
 # KuTo
-Sammlung von JS-Tools für Kurse
+Sammlung von Javascript-Tools für Kurse
