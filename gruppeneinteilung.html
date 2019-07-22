@@ -37,22 +37,31 @@
         <!-- upload csv form -->
         <form>
             <div class="form-group">
-                <label for="csv-input">CSV-Datei</label>
-                <input type="file" class="form-control-file" id="csv-input">
+                <label for="csv-input">CSV-Datei (CeviDB -> Event/Lager -> CSV -> Adressliste)</label>
+                <input type="file" class="form-control-file" id="csv-input" accept=".csv,.csv">
             </div>
         </form>
         <form>
             <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="abteilungen-verschieden">
+                <input type="checkbox" class="form-check-input" id="abteilungen-verschieden" disabled>
                 <label class="form-check-label" for="abteilungen-verschieden">TN gleicher Abteilung in verschiedene
-                    Gruppen</label>
+                    Gruppen (noch nicht implementiert)</label>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="tn-mischeln">
+                <label class="form-check-label" for="tn-mischeln">Teilnehmer mischeln</label>
             </div>
             <div class="form-group">
                 <label for="gruppen-anzahl">Anzahl Gruppen</label>
-                <input type="number" class="form-control" id="gruppen-anzahl">
+                <input type="number" class="form-control" id="gruppen-anzahl" value="6">
+            </div>
+
+            <div class="form-group">
+                <button class="form-control" id="berechnen">Berechnen</button>
             </div>
         </form>
-
+        <hr />
+        <div id="gruppen-display"></div>
     </div>
 
     <!-- Optional JavaScript -->
@@ -66,6 +75,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+    <script src="js/gruppeneinteilung.js"></script>
 </body>
 
 </html>
